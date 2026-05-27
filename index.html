@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Bacca Fibra | Conexão de Alta Performance</title>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%238b5cf6%22>B</text></svg>">
@@ -44,7 +44,7 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background - Mais dinâmico */
+        /* Animated Background */
         .bg-animated {
             position: fixed;
             top: 0;
@@ -104,35 +104,9 @@
             animation: shapeFloat 15s ease-in-out infinite;
         }
 
-        .shape1 {
-            top: 10%;
-            left: 10%;
-            width: 300px;
-            height: 300px;
-            background: var(--primary);
-            border-radius: 50%;
-            animation-delay: 0s;
-        }
-
-        .shape2 {
-            bottom: 10%;
-            right: 10%;
-            width: 400px;
-            height: 400px;
-            background: var(--secondary);
-            border-radius: 60% 40% 70% 30%;
-            animation-delay: -5s;
-        }
-
-        .shape3 {
-            top: 50%;
-            left: 50%;
-            width: 350px;
-            height: 350px;
-            background: var(--warning);
-            border-radius: 40% 60% 30% 70%;
-            animation-delay: -10s;
-        }
+        .shape1 { top: 10%; left: 10%; width: 300px; height: 300px; background: var(--primary); border-radius: 50%; animation-delay: 0s; }
+        .shape2 { bottom: 10%; right: 10%; width: 400px; height: 400px; background: var(--secondary); border-radius: 60% 40% 70% 30%; animation-delay: -5s; }
+        .shape3 { top: 50%; left: 50%; width: 350px; height: 350px; background: var(--warning); border-radius: 40% 60% 30% 70%; animation-delay: -10s; }
 
         @keyframes shapeFloat {
             0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
@@ -140,7 +114,7 @@
             66% { transform: translate(-30px, 50px) rotate(240deg) scale(0.9); }
         }
 
-        /* Header com mais animações */
+        /* Header */
         .header {
             position: fixed;
             top: 0;
@@ -159,14 +133,8 @@
         }
 
         @keyframes headerSlideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .header.scrolled {
@@ -185,35 +153,11 @@
             cursor: pointer;
             transition: all 0.3s ease;
             animation: logoGlow 3s ease-in-out infinite;
-            position: relative;
         }
 
         @keyframes logoGlow {
             0%, 100% { text-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
             50% { text-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
-        }
-
-        .logo:hover {
-            transform: scale(1.1) rotate(3deg);
-        }
-
-        .logo::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            background: var(--gradient-1);
-            border-radius: 10px;
-            z-index: -1;
-            opacity: 0;
-            filter: blur(15px);
-            transition: opacity 0.3s ease;
-        }
-
-        .logo:hover::before {
-            opacity: 0.5;
         }
 
         .btn-pulse {
@@ -239,39 +183,12 @@
             50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
         }
 
-        .btn-pulse::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: btnShine 3s infinite;
-        }
-
-        @keyframes btnShine {
-            0% { left: -100%; }
-            20% { left: 100%; }
-            100% { left: 100%; }
-        }
-
         .btn-pulse:hover {
             transform: translateY(-3px) scale(1.02);
             animation: none;
         }
 
-        .btn-pulse i {
-            animation: btnIcon 1s infinite;
-        }
-
-        @keyframes btnIcon {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(10deg); }
-            75% { transform: rotate(-10deg); }
-        }
-
-        /* Hero Section com mais animações */
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -280,7 +197,6 @@
             text-align: center;
             padding: 8rem 5% 4rem;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-content {
@@ -293,23 +209,12 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            animation: titleReveal 1s ease, titleFloat 3s ease-in-out infinite 1s;
+            animation: titleReveal 1s ease;
         }
 
         @keyframes titleReveal {
-            from {
-                opacity: 0;
-                transform: translateY(50px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        @keyframes titleFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            from { opacity: 0; transform: translateY(50px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .hero h1 span {
@@ -317,37 +222,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            animation: spanGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes spanGlow {
-            0%, 100% { 
-                text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
-                transform: scale(1);
-            }
-            50% { 
-                text-shadow: 0 0 40px rgba(139, 92, 246, 0.8);
-                transform: scale(1.05);
-            }
         }
 
         .hero p {
             font-size: 1.2rem;
             color: var(--text-secondary);
             margin-bottom: 2.5rem;
-            animation: fadeInUp 1s ease 0.2s both;
         }
 
-        .hero p i {
-            animation: sparkle 2s infinite;
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        /* Alert Card com mais efeitos */
         .alert-card-modern {
             background: rgba(139, 92, 246, 0.1);
             border: 2px solid transparent;
@@ -360,107 +242,24 @@
             gap: 2rem;
             backdrop-filter: blur(10px);
             margin-top: 2rem;
-            position: relative;
-            overflow: hidden;
-            animation: cardEntrance 1s ease 0.5s both, cardPulse 3s ease-in-out infinite 1.5s;
+            animation: cardEntrance 1s ease;
         }
 
         @keyframes cardEntrance {
-            from {
-                opacity: 0;
-                transform: scale(0.8) translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
+            from { opacity: 0; transform: scale(0.8) translateY(50px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        @keyframes cardPulse {
-            0%, 100% { 
-                box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 0 60px rgba(139, 92, 246, 0.6);
-                transform: scale(1.02);
-            }
-        }
-
-        .alert-card-modern::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 90deg at 50% 50%, 
-                transparent 0deg, 
-                var(--primary) 90deg, 
-                transparent 180deg,
-                var(--secondary) 270deg,
-                transparent 360deg);
-            animation: rotate 10s linear infinite;
-            opacity: 0.1;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .alert-icon {
-            font-size: 3rem;
-            color: var(--warning);
-            animation: iconBounce 2s ease-in-out infinite, iconColor 5s linear infinite;
-        }
-
-        @keyframes iconBounce {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(10deg); }
-        }
-
-        @keyframes iconColor {
-            0%, 100% { color: var(--warning); }
-            50% { color: var(--primary); }
-        }
-
-        .alert-text h4 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #fff, #fbbf24, #8b5cf6, #06b6d4);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 5s ease infinite;
-        }
-
-        @keyframes gradientMove {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .alert-bolt {
-            color: var(--warning);
-            font-size: 2rem;
-            animation: boltFlash 1s infinite;
-        }
+        .alert-icon { font-size: 3rem; color: var(--warning); }
+        .alert-text h4 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .alert-bolt { color: var(--warning); font-size: 2rem; animation: boltFlash 1s infinite; }
 
         @keyframes boltFlash {
-            0%, 100% { 
-                opacity: 1; 
-                transform: scale(1) rotate(0deg);
-                text-shadow: 0 0 20px var(--warning);
-            }
-            50% { 
-                opacity: 0.7; 
-                transform: scale(1.3) rotate(15deg);
-                text-shadow: 0 0 40px var(--warning);
-            }
+            0%, 100% { opacity: 1; transform: scale(1); text-shadow: 0 0 20px var(--warning); }
+            50% { opacity: 0.7; transform: scale(1.3) rotate(15deg); text-shadow: 0 0 40px var(--warning); }
         }
 
-        /* Plans Section com mais animações */
+        /* Plans Section */
         .section {
             padding: 5rem 5%;
             position: relative;
@@ -471,37 +270,12 @@
             font-weight: 800;
             text-align: center;
             margin-bottom: 4rem;
-            animation: titleReveal 1s ease;
         }
 
         .section-title span {
             background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-            display: inline-block;
-            animation: spanWave 3s ease-in-out infinite;
-        }
-
-        @keyframes spanWave {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .section-title span::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-1);
-            animation: lineWidth 3s ease-in-out infinite;
-        }
-
-        @keyframes lineWidth {
-            0%, 100% { width: 100%; left: 0; }
-            50% { width: 50%; left: 25%; }
         }
 
         .pricing-grid {
@@ -520,22 +294,6 @@
             position: relative;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
-            animation: cardFadeIn 0.8s ease backwards;
-        }
-
-        .price-card-modern:nth-child(1) { animation-delay: 0.2s; }
-        .price-card-modern:nth-child(2) { animation-delay: 0.4s; }
-        .price-card-modern:nth-child(3) { animation-delay: 0.6s; }
-
-        @keyframes cardFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
         }
 
         .price-card-modern:hover {
@@ -544,50 +302,10 @@
             box-shadow: 0 30px 60px rgba(139, 92, 246, 0.3);
         }
 
-        .price-card-modern::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent, rgba(139, 92, 246, 0.1), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .price-card-modern:hover::before {
-            transform: translateX(100%);
-        }
-
-        .price-card-modern::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--gradient-1);
-            border-radius: 42px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: -1;
-        }
-
-        .price-card-modern:hover::after {
-            opacity: 0.2;
-        }
-
         .price-card-modern.featured {
             border: 2px solid var(--primary);
             transform: scale(1.05);
             z-index: 2;
-            animation: featuredPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes featuredPulse {
-            0%, 100% { box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3); }
-            50% { box-shadow: 0 40px 80px rgba(139, 92, 246, 0.6); }
         }
 
         .featured-badge {
@@ -599,24 +317,6 @@
             border-radius: 30px;
             font-size: 0.8rem;
             font-weight: 700;
-            animation: badgeGlow 2s infinite, badgeRotate 5s linear infinite;
-        }
-
-        @keyframes badgeGlow {
-            0%, 100% { 
-                box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 0 40px rgba(139, 92, 246, 0.8);
-                transform: scale(1.05);
-            }
-        }
-
-        @keyframes badgeRotate {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(2deg); }
-            75% { transform: rotate(-2deg); }
         }
 
         .speed-label {
@@ -624,24 +324,9 @@
             font-weight: 800;
             line-height: 1;
             margin: 1rem 0;
-            animation: speedPop 1s ease;
         }
 
-        @keyframes speedPop {
-            from { transform: scale(0.5); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .speed-label span {
-            font-size: 1.3rem;
-            color: var(--primary);
-            animation: spanPulse 2s infinite;
-        }
-
-        @keyframes spanPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+        .speed-label span { font-size: 1.3rem; color: var(--primary); }
 
         .feature-list-modern {
             list-style: none;
@@ -654,41 +339,9 @@
             align-items: center;
             gap: 1rem;
             color: var(--text-secondary);
-            transition: all 0.3s ease;
-            animation: featureSlide 0.5s ease backwards;
         }
 
-        .feature-list-modern li:nth-child(1) { animation-delay: 0.1s; }
-        .feature-list-modern li:nth-child(2) { animation-delay: 0.2s; }
-        .feature-list-modern li:nth-child(3) { animation-delay: 0.3s; }
-        .feature-list-modern li:nth-child(4) { animation-delay: 0.4s; }
-        .feature-list-modern li:nth-child(5) { animation-delay: 0.5s; }
-
-        @keyframes featureSlide {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .feature-list-modern li:hover {
-            transform: translateX(15px) scale(1.02);
-            color: var(--text-primary);
-        }
-
-        .feature-list-modern i {
-            color: var(--success);
-            animation: checkPop 1s infinite;
-        }
-
-        @keyframes checkPop {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
+        .feature-list-modern i { color: var(--success); }
 
         .btn-plan {
             width: 100%;
@@ -700,45 +353,18 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            animation: btnPulse 2s infinite;
-        }
-
-        @keyframes btnPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        .btn-plan::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: var(--gradient-1);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-            z-index: -1;
-        }
-
-        .btn-plan:hover::before {
-            width: 400px;
-            height: 400px;
         }
 
         .btn-plan:hover {
-            border-color: transparent;
+            border-color: var(--primary);
+            background: var(--gradient-1);
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
         }
 
-        /* Form Section com mais animações */
+        /* Form Section */
         .contact-box-modern {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: var(--bg-card);
             border-radius: 40px;
@@ -746,18 +372,6 @@
             border: 1px solid var(--border);
             position: relative;
             overflow: hidden;
-            animation: formEntrance 1s ease;
-        }
-
-        @keyframes formEntrance {
-            from {
-                opacity: 0;
-                transform: scale(0.9) rotate(-2deg);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) rotate(0);
-            }
         }
 
         .contact-box-modern::before {
@@ -767,12 +381,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(from 90deg at 50% 50%, 
-                transparent 0deg, 
-                var(--primary) 90deg, 
-                transparent 180deg,
-                var(--secondary) 270deg,
-                transparent 360deg);
+            background: conic-gradient(from 90deg at 50% 50%, transparent 0deg, var(--primary) 90deg, transparent 180deg, var(--secondary) 270deg, transparent 360deg);
             animation: formRotate 10s linear infinite;
             opacity: 0.05;
         }
@@ -799,34 +408,10 @@
             gap: 1.5rem;
         }
 
-        .full-width {
-            grid-column: span 2;
-        }
+        .full-width { grid-column: span 2; }
 
         .form-group-modern {
             position: relative;
-            animation: fieldFade 0.5s ease backwards;
-        }
-
-        .form-group-modern:nth-child(1) { animation-delay: 0.1s; }
-        .form-group-modern:nth-child(2) { animation-delay: 0.2s; }
-        .form-group-modern:nth-child(3) { animation-delay: 0.3s; }
-        .form-group-modern:nth-child(4) { animation-delay: 0.4s; }
-        .form-group-modern:nth-child(5) { animation-delay: 0.5s; }
-        .form-group-modern:nth-child(6) { animation-delay: 0.6s; }
-        .form-group-modern:nth-child(7) { animation-delay: 0.7s; }
-        .form-group-modern:nth-child(8) { animation-delay: 0.8s; }
-        .form-group-modern:nth-child(9) { animation-delay: 0.9s; }
-
-        @keyframes fieldFade {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
 
         .form-label-modern {
@@ -851,25 +436,13 @@
             color: var(--text-primary);
             font-size: 1rem;
             transition: all 0.3s ease;
-            animation: inputPulse 2s infinite;
-        }
-
-        @keyframes inputPulse {
-            0%, 100% { border-color: var(--border); }
-            50% { border-color: rgba(139, 92, 246, 0.3); }
         }
 
         .form-input-modern:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
-            transform: translateY(-3px) scale(1.02);
-            animation: none;
-        }
-
-        .form-input-modern:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         .btn-submit {
@@ -882,51 +455,21 @@
             font-weight: 700;
             font-size: 1.1rem;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
             transition: all 0.3s ease;
             margin-top: 1rem;
             grid-column: span 2;
-            animation: submitPulse 2s infinite, submitGlow 3s infinite;
-        }
-
-        @keyframes submitPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        @keyframes submitGlow {
-            0%, 100% { box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3); }
-            50% { box-shadow: 0 20px 50px rgba(139, 92, 246, 0.6); }
-        }
-
-        .btn-submit::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: submitShine 3s infinite;
-        }
-
-        @keyframes submitShine {
-            0% { left: -100%; }
-            20% { left: 100%; }
-            100% { left: 100%; }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
         }
 
         .btn-submit:hover {
-            transform: translateY(-5px) scale(1.03);
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 30px 60px rgba(139, 92, 246, 0.5);
-            animation: none;
         }
 
-        .btn-submit i {
-            margin-right: 0.5rem;
-            animation: waFloat 2s infinite;
-        }
+        .btn-submit i { animation: waFloat 2s infinite; }
 
         @keyframes waFloat {
             0%, 100% { transform: rotate(0deg) translateY(0); }
@@ -934,7 +477,27 @@
             75% { transform: rotate(-15deg) translateY(3px); }
         }
 
-        /* WhatsApp Float com mais animações */
+        .loading-dots {
+            display: inline-flex;
+            gap: 5px;
+        }
+
+        .loading-dots span {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            animation: loadingBounce 1s infinite;
+        }
+
+        .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes loadingBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
         .wa-float-modern {
             position: fixed;
             bottom: 2rem;
@@ -951,29 +514,12 @@
             text-decoration: none;
             z-index: 1000;
             transition: all 0.3s ease;
-            animation: waFloatIn 0.5s ease, waPulse 2s ease-in-out infinite 0.5s;
-        }
-
-        @keyframes waFloatIn {
-            from {
-                opacity: 0;
-                transform: scale(0) rotate(-180deg);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) rotate(0);
-            }
+            animation: waFloatIn 0.5s ease, waPulse 2s ease-in-out infinite;
         }
 
         @keyframes waPulse {
-            0%, 100% { 
-                transform: scale(1); 
-                box-shadow: 0 0 30px rgba(37, 211, 102, 0.3);
-            }
-            50% { 
-                transform: scale(1.15); 
-                box-shadow: 0 0 60px rgba(37, 211, 102, 0.6);
-            }
+            0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(37, 211, 102, 0.3); }
+            50% { transform: scale(1.15); box-shadow: 0 0 60px rgba(37, 211, 102, 0.6); }
         }
 
         .wa-float-modern:hover {
@@ -981,55 +527,12 @@
             animation: none;
         }
 
-        .wa-float-modern i {
-            animation: waIcon 3s infinite;
-        }
-
-        @keyframes waIcon {
-            0%, 100% { transform: rotate(0deg); }
-            33% { transform: rotate(10deg); }
-            66% { transform: rotate(-10deg); }
-        }
-
-        /* Footer com mais animações */
         .footer-modern {
             padding: 3rem;
             text-align: center;
             border-top: 1px solid var(--border);
             background: rgba(3, 7, 18, 0.5);
             backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 10;
-            overflow: hidden;
-            animation: footerFadeIn 1s ease;
-        }
-
-        @keyframes footerFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .footer-modern::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-1);
-            animation: footerLine 5s linear infinite;
-        }
-
-        @keyframes footerLine {
-            0% { left: -100%; }
-            50% { left: 100%; }
-            100% { left: 100%; }
         }
 
         .footer-logo {
@@ -1040,32 +543,11 @@
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
             display: inline-block;
-            animation: footerLogoFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes footerLogoFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
         }
 
         .footer-text {
             color: var(--text-secondary);
             margin: 0.5rem 0;
-            animation: footerTextFade 1s ease backwards;
-        }
-
-        .footer-text:nth-child(2) { animation-delay: 0.1s; }
-        .footer-text:nth-child(3) { animation-delay: 0.2s; }
-
-        @keyframes footerTextFade {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
 
         .footer-link {
@@ -1073,123 +555,29 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            animation: linkGlow 2s infinite;
-        }
-
-        @keyframes linkGlow {
-            0%, 100% { text-shadow: 0 0 10px rgba(139, 92, 246, 0.3); }
-            50% { text-shadow: 0 0 20px rgba(139, 92, 246, 0.6); }
         }
 
         .footer-link:hover {
             color: #fff;
-            transform: translateY(-3px) scale(1.05);
+            transform: translateY(-3px);
+            display: inline-block;
         }
 
-        .footer-link i {
-            animation: rocketFloat 2s ease-in-out infinite;
-        }
+        .produced-by { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px dashed var(--border); }
 
-        @keyframes rocketFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-5px) rotate(10deg); }
-        }
-
-        .produced-by {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px dashed var(--border);
-            font-size: 0.9rem;
-            animation: producedFade 1s ease 0.3s both;
-        }
-
-        @keyframes producedFade {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Loading animation */
-        .loading-dots {
-            display: inline-flex;
-            gap: 5px;
-        }
-
-        .loading-dots span {
-            width: 8px;
-            height: 8px;
-            background: var(--primary);
-            border-radius: 50%;
-            animation: loadingBounce 1s infinite;
-        }
-
-        .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
-        .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes loadingBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .alert-card-modern {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-                padding: 1.5rem;
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .price-card-modern.featured {
-                transform: scale(1);
-            }
-            
-            .contact-box-modern {
-                padding: 1.5rem;
-            }
-            
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .full-width {
-                grid-column: span 1;
-            }
-
-            .wa-float-modern {
-                width: 60px;
-                height: 60px;
-                font-size: 1.8rem;
-                bottom: 1rem;
-                right: 1rem;
-            }
-        }
-
-        /* AOS Custom Animations */
-        [data-aos] {
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            .hero h1 { font-size: 2rem; }
+            .alert-card-modern { flex-direction: column; text-align: center; gap: 1rem; padding: 1.5rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .price-card-modern.featured { transform: scale(1); }
+            .contact-box-modern { padding: 1.5rem; }
+            .form-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            .wa-float-modern { width: 60px; height: 60px; font-size: 1.8rem; bottom: 1rem; right: 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background com mais elementos -->
     <div class="bg-animated">
         <div class="bg-gradient"></div>
         <div class="bg-particles"></div>
@@ -1200,7 +588,6 @@
         </div>
     </div>
 
-    <!-- Header -->
     <header class="header" id="header">
         <div class="logo">Bacca<span>Fibra</span></div>
         <a href="#contato" class="btn-pulse">
@@ -1209,7 +596,6 @@
         </a>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1 data-aos="fade-up">
@@ -1218,13 +604,10 @@
             <p data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-bolt"></i> Velocidade extrema, estabilidade absoluta e aprovação garantida para todos <i class="fas fa-bolt"></i>
             </p>
-            
             <div class="alert-card-modern" data-aos="zoom-in" data-aos-delay="200">
-                <div class="alert-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
+                <div class="alert-icon"><i class="fas fa-shield-alt"></i></div>
                 <div class="alert-text">
-                    <h4>APROVAMOS NEGATIVADOS! 🚀</h4>
+                    <h4>CLIENTE PRÉ-APROVADO! 🚀</h4>
                     <p style="color: var(--text-secondary);">Sem consulta SPC/Serasa • Instalação em 24h</p>
                 </div>
                 <i class="fas fa-bolt alert-bolt"></i>
@@ -1232,49 +615,28 @@
         </div>
     </section>
 
-    <!-- Plans Section -->
     <section class="section" id="planos">
         <h2 class="section-title" data-aos="fade-up">
             Escolha o <span>Plano Ideal</span> para Você
         </h2>
-        
         <div class="pricing-grid">
-            <!-- Plano 600 Mega -->
             <div class="price-card-modern" data-aos="flip-left" data-aos-delay="100">
-                <h3 style="color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">
-                    HOME OFFICE
-                </h3>
-                <div class="speed-label">
-                    600<span>MEGA</span>
-                </div>
-                <div class="price-label">
-                    R$ 99,99 <small>/mês</small>
-                </div>
+                <h3 style="color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">HOME OFFICE</h3>
+                <div class="speed-label">600<span>MEGA</span></div>
+                <div class="price-label">R$ 99,99 <small>/mês</small></div>
                 <ul class="feature-list-modern">
                     <li><i class="fas fa-check-circle"></i> Wi-Fi 6 incluso</li>
                     <li><i class="fas fa-check-circle"></i> Instalação grátis</li>
                     <li><i class="fas fa-check-circle"></i> Sem análise de crédito</li>
                     <li><i class="fas fa-check-circle"></i> Suporte 24/7</li>
                 </ul>
-                <button class="btn-plan" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
-                    ASSINAR AGORA
-                </button>
+                <button class="btn-plan" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">ASSINAR AGORA</button>
             </div>
-
-            <!-- Plano 800 Mega (Destaque) -->
             <div class="price-card-modern featured" data-aos="flip-left" data-aos-delay="200">
-                <div class="featured-badge">
-                    <i class="fas fa-crown"></i> MAIS VENDIDO
-                </div>
-                <h3 style="color: var(--primary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">
-                    GAMER & STREAMING
-                </h3>
-                <div class="speed-label">
-                    800<span>MEGA</span>
-                </div>
-                <div class="price-label">
-                    R$ 109,99 <small>/mês</small>
-                </div>
+                <div class="featured-badge"><i class="fas fa-crown"></i> MAIS VENDIDO</div>
+                <h3 style="color: var(--primary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">GAMER & STREAMING</h3>
+                <div class="speed-label">800<span>MEGA</span></div>
+                <div class="price-label">R$ 109,99 <small>/mês</small></div>
                 <ul class="feature-list-modern">
                     <li><i class="fas fa-check-circle"></i> Roteador Gaming incluso</li>
                     <li><i class="fas fa-check-circle"></i> Ping ultra baixo</li>
@@ -1282,96 +644,94 @@
                     <li><i class="fas fa-check-circle"></i> Sem consulta SPC/Serasa</li>
                     <li><i class="fas fa-check-circle"></i> Instalação em 12h</li>
                 </ul>
-                <button class="btn-plan" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
-                    ASSINAR AGORA
-                </button>
+                <button class="btn-plan" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">ASSINAR AGORA</button>
             </div>
-
-            <!-- Plano Empresarial -->
             <div class="price-card-modern" data-aos="flip-left" data-aos-delay="300">
-                <h3 style="color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">
-                    CORPORATIVO
-                </h3>
-                <div class="speed-label">
-                    1<span>GIGA</span>
-                </div>
-                <div class="price-label">
-                    Sob Consulta R$139,99
-                </div>
+                <h3 style="color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">CORPORATIVO</h3>
+                <div class="speed-label">1<span>GIGA</span></div>
+                <div class="price-label">R$ 139,99 <small>/mês</small></div>
                 <ul class="feature-list-modern">
                     <li><i class="fas fa-check-circle"></i> Link dedicado</li>
                     <li><i class="fas fa-check-circle"></i> IP Fixo incluso</li>
                     <li><i class="fas fa-check-circle"></i> SLA 99.9%</li>
                     <li><i class="fas fa-check-circle"></i> Gerente exclusivo</li>
                 </ul>
-                <button class="btn-plan" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
-                    FALAR COM CONSULTOR
-                </button>
+                <button class="btn-plan" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">FALAR COM CONSULTOR</button>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Formulário profissional -->
     <section class="section" id="contato">
         <h2 class="section-title" data-aos="fade-up">
             Faça sua <span>Adesão Agora</span>
         </h2>
-        
         <div class="contact-box-modern" data-aos="zoom-in">
             <form id="cadastroForm" class="form-grid">
                 <div class="form-group-modern full-width">
-                    <label class="form-label-modern">Nome Completo</label>
+                    <label class="form-label-modern">Nome Completo *</label>
                     <input type="text" id="nome" class="form-input-modern" placeholder="Digite seu nome completo" required>
                 </div>
-
                 <div class="form-group-modern">
-                    <label class="form-label-modern">CPF</label>
+                    <label class="form-label-modern">CPF *</label>
                     <input type="text" id="cpf" class="form-input-modern" placeholder="000.000.000-00" required>
                 </div>
-
                 <div class="form-group-modern">
-                    <label class="form-label-modern">Data de Nascimento</label>
+                    <label class="form-label-modern">Data de Nascimento *</label>
                     <input type="date" id="nascimento" class="form-input-modern" required>
                 </div>
-
                 <div class="form-group-modern full-width">
-                    <label class="form-label-modern">Endereço Completo</label>
-                    <input type="text" id="endereco" class="form-input-modern" placeholder="Rua, número, bairro, cidade, complemento, estado, cep" required>
+                    <label class="form-label-modern">Endereço (Rua/Av) *</label>
+                    <input type="text" id="endereco" class="form-input-modern" placeholder="Nome da rua ou avenida" required>
                 </div>
-
                 <div class="form-group-modern">
-                    <label class="form-label-modern">WhatsApp</label>
+                    <label class="form-label-modern">Número da Residência *</label>
+                    <input type="text" id="numero" class="form-input-modern" placeholder="Número" required>
+                </div>
+                <div class="form-group-modern">
+                    <label class="form-label-modern">Complemento</label>
+                    <input type="text" id="complemento" class="form-input-modern" placeholder="Apto, Bloco, Casa">
+                </div>
+                <div class="form-group-modern">
+                    <label class="form-label-modern">Bairro *</label>
+                    <input type="text" id="bairro" class="form-input-modern" placeholder="Bairro" required>
+                </div>
+                <div class="form-group-modern">
+                    <label class="form-label-modern">Cidade *</label>
+                    <input type="text" id="cidade" class="form-input-modern" placeholder="Cidade" required>
+                </div>
+                <div class="form-group-modern">
+                    <label class="form-label-modern">Estado *</label>
+                    <input type="text" id="estado" class="form-input-modern" placeholder="UF (ex: SP)" maxlength="2" required>
+                </div>
+                <div class="form-group-modern">
+                    <label class="form-label-modern">WhatsApp *</label>
                     <input type="tel" id="tel1" class="form-input-modern" placeholder="(00) 00000-0000" required>
                 </div>
-
                 <div class="form-group-modern">
                     <label class="form-label-modern">Telefone Recado</label>
                     <input type="tel" id="tel2" class="form-input-modern" placeholder="(00) 00000-0000">
                 </div>
-
                 <div class="form-group-modern full-width">
-                    <label class="form-label-modern">E-mail</label>
+                    <label class="form-label-modern">E-mail *</label>
                     <input type="email" id="email" class="form-input-modern" placeholder="seu@email.com" required>
                 </div>
-
                 <div class="form-group-modern">
-                    <label class="form-label-modern">Plano Escolhido</label>
+                    <label class="form-label-modern">Plano Escolhido *</label>
                     <select id="plano" class="form-input-modern" required>
-                        <option value="400 Mega - R$ 79,90">600 Mega - R$ 99,99/mês</option>
-                        <option value="600 Mega - R$ 99,90">800 Mega - R$ 109,99/mês</option>
-                        <option value="Plano Empresarial">Plano Empresarial - R$ 139,99/mês</option>
+                        <option value="600 Mega - R$ 99,99/mês">600 Mega - R$ 99,99/mês</option>
+                        <option value="800 Mega - R$ 109,99/mês" selected>800 Mega - R$ 109,99/mês</option>
+                        <option value="1 Giga - R$ 139,99/mês">1 Giga - R$ 139,99/mês</option>
                     </select>
                 </div>
-
                 <div class="form-group-modern">
-                    <label class="form-label-modern">Melhor Período</label>
+                    <label class="form-label-modern">Período para Instalação *</label>
                     <select id="periodo" class="form-input-modern" required>
-                        <option value="Manhã (08h-12h)">Manhã (08h às 12h)</option>
-                        <option value="Tarde (13h-18h)">Tarde (13h às 18h)</option>
-                        <option value="Noite (18h-21h)">Noite (18h às 21h)</option>
+                        <option value="SEG A SEX MANHÃ (08h às 12h)">SEG A SEX MANHÃ (08h às 12h)</option>
+                        <option value="SEG A SEX TARDE (13h às 18h)">SEG A SEX TARDE (13h às 18h)</option>
+                        <option value="SÁBADO (09h às 18h)">SÁBADO (09h às 18h)</option>
                     </select>
                 </div>
-
                 <button type="submit" class="btn-submit">
                     <i class="fab fa-whatsapp"></i>
                     ENVIAR PEDIDO VIA WHATSAPP
@@ -1385,182 +745,127 @@
         </div>
     </section>
 
-    <!-- WhatsApp Float Button -->
     <a href="https://wa.me/5516993830355" class="wa-float-modern" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Footer -->
     <footer class="footer-modern">
         <div class="footer-logo">Bacca<span>Fibra</span></div>
         <p class="footer-text">© 2026 Bacca Fibra Telecomunicações. Todos os direitos reservados.</p>
-        <p class="footer-text">
-            <i class="fas fa-bolt" style="color: var(--primary);"></i> 
-            Conectando o futuro, hoje.
-        </p>
-        
+        <p class="footer-text"><i class="fas fa-bolt" style="color: var(--primary);"></i> Conectando o futuro, hoje.</p>
         <div class="produced-by">
-            <p class="footer-text" style="font-size: 0.9rem;">
-                Produzido por 
-                <a href="https://baccaprosites.com.br" class="footer-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-rocket"></i> BaccaProSites
-                </a>
-            </p>
-            <p class="footer-text" style="font-size: 0.8rem; opacity: 0.7;">
-                Sites profissionais que convertem
-            </p>
+            <p class="footer-text">Produzido por <a href="https://baccaprosites.com.br" class="footer-link" target="_blank"><i class="fas fa-rocket"></i> BaccaProSites</a></p>
+            <p class="footer-text" style="font-size: 0.8rem; opacity: 0.7;">Sites profissionais que convertem</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS with optimized settings
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-            easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-            delay: 100
-        });
+        AOS.init({ duration: 1000, once: true, offset: 100 });
 
-        // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            header.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Form submission with loading animation
+        // Máscara CPF
+        document.getElementById('cpf').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+            if (value.length > 9) value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            else if (value.length > 6) value = value.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1.$2.$3');
+            else if (value.length > 3) value = value.replace(/(\d{3})(\d{1,3})/, '$1.$2');
+            e.target.value = value;
+        });
+
+        // Máscara telefone
+        function phoneMask(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+            if (value.length > 6) value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            else if (value.length > 2) value = value.replace(/(\d{2})(\d{1,4})/, '($1) $2');
+            e.target.value = value;
+        }
+        document.getElementById('tel1').addEventListener('input', phoneMask);
+        document.getElementById('tel2').addEventListener('input', phoneMask);
+
+        // Submit com formatação linha por linha
         document.getElementById('cadastroForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const btn = this.querySelector('.btn-submit');
-            const originalText = btn.innerHTML;
-            const loadingDots = btn.querySelector('.loading-dots');
+            const originalHTML = btn.innerHTML;
+            const loadingSpan = btn.querySelector('.loading-dots');
             
-            // Show loading animation
-            btn.style.pointerEvents = 'none';
-            btn.innerHTML = 'ENVIANDO ';
-            loadingDots.style.display = 'inline-flex';
+            // Validação campos obrigatórios
+            const obrigatorios = ['nome', 'cpf', 'endereco', 'numero', 'bairro', 'cidade', 'estado', 'tel1', 'email', 'nascimento'];
+            let faltam = false;
+            obrigatorios.forEach(campo => {
+                const el = document.getElementById(campo);
+                if (!el.value.trim()) faltam = true;
+            });
+            if (faltam) {
+                alert('Por favor, preencha todos os campos obrigatórios (*).');
+                return;
+            }
             
-            // Prepare message
+            // Coleta dados
             const nome = document.getElementById('nome').value;
             const cpf = document.getElementById('cpf').value;
             const nascimento = document.getElementById('nascimento').value;
             const endereco = document.getElementById('endereco').value;
-            const tel1 = document.getElementById('tel1').value;
-            const tel2 = document.getElementById('tel2').value || 'Não informado';
+            const numero = document.getElementById('numero').value;
+            const complemento = document.getElementById('complemento').value || 'Não informado';
+            const bairro = document.getElementById('bairro').value;
+            const cidade = document.getElementById('cidade').value;
+            const estado = document.getElementById('estado').value;
+            const whatsapp = document.getElementById('tel1').value;
+            const telefoneRecado = document.getElementById('tel2').value || 'Não informado';
             const email = document.getElementById('email').value;
             const plano = document.getElementById('plano').value;
             const periodo = document.getElementById('periodo').value;
-
-            const mensagem = `🚀 *NOVA SOLICITAÇÃO - BACCA FIBRA*\n\n` +
-                `👤 *Nome:* ${nome}\n` +
-                `📄 *CPF:* ${cpf}\n` +
-                `🎂 *Nascimento:* ${nascimento}\n` +
-                `📍 *Endereço:* ${endereco}\n` +
-                `📍 *Numero:* ${numero}\n` +
-                `📍 *Complemento:* ${complemento}\n` +
-                `📍 *Bairro:* ${bairro}\n` +
-                `📍 *Cidade:* ${cidade}\n` +
-                `📍 *Estado:* ${estado}\n` +
-                `📱 *WhatsApp:* ${tel1}\n` +
-                `📞 *Recado:* ${tel2}\n` +
-                `📧 *Email:* ${email}\n` +
-                `⚡ *Plano:* ${plano}\n` +
-                `⏰ *Período:* ${periodo}\n\n` +
-                `✅ *Cliente pré aprovado sem consulta SPC/Serasa*`;
-
-            // Open WhatsApp after small delay
+            
+            // Formatação linha por linha, cada dado em uma linha separada
+            const mensagem = 
+                "🚀 *NOVA SOLICITAÇÃO - BACCA FIBRA* 🚀\n\n" +
+                "👤 *Nome Completo:* " + nome + "\n" +
+                "📄 *CPF:* " + cpf + "\n" +
+                "🏠 *Endereço:* " + endereco + "\n" +
+                "🔢 *Número da Residência:* " + numero + "\n" +
+                "📍 *Complemento:* " + complemento + "\n" +
+                "🏘️ *Bairro:* " + bairro + "\n" +
+                "🌆 *Cidade:* " + cidade + "\n" +
+                "🗺️ *Estado:* " + estado + "\n" +
+                "📱 *WhatsApp:* " + whatsapp + "\n" +
+                "📞 *Telefone Recado:* " + telefoneRecado + "\n" +
+                "📧 *E-mail:* " + email + "\n" +
+                "🎂 *Data de Nascimento:* " + nascimento + "\n\n" +
+                "⚡ *PLANO ESCOLHIDO:* " + plano + "\n" +
+                "⏰ *PERÍODO PARA INSTALAÇÃO:* " + periodo + "\n\n" +
+                "✅ *CLIENTE PRÉ-APROVADO SEM CONSUSTA AO SPC/SERASA*\n" +
+                "🔥 *Instalação rápida e suporte garantido!*";
+            
+            // Mostrar loading
+            btn.style.pointerEvents = 'none';
+            btn.innerHTML = 'ENVIANDO ';
+            loadingSpan.style.display = 'inline-flex';
+            
             setTimeout(() => {
                 window.open(`https://wa.me/5516993830355?text=${encodeURIComponent(mensagem)}`, '_blank');
-                
-                // Restore button
-                btn.innerHTML = originalText;
+                btn.innerHTML = originalHTML;
                 btn.style.pointerEvents = 'auto';
-                loadingDots.style.display = 'none';
-            }, 800);
+                loadingSpan.style.display = 'none';
+            }, 500);
         });
 
-        // Input masks
-        document.getElementById('cpf').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 11) value = value.slice(0, 11);
-            
-            if (value.length > 9) {
-                value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-            } else if (value.length > 6) {
-                value = value.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1.$2.$3');
-            } else if (value.length > 3) {
-                value = value.replace(/(\d{3})(\d{1,3})/, '$1.$2');
-            }
-            
-            e.target.value = value;
-        });
-
-        // Phone mask
-        function phoneMask(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 11) value = value.slice(0, 11);
-            
-            if (value.length > 6) {
-                value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-            } else if (value.length > 2) {
-                value = value.replace(/(\d{2})(\d{1,4})/, '($1) $2');
-            }
-            
-            e.target.value = value;
-        }
-
-        document.getElementById('tel1').addEventListener('input', phoneMask);
-        document.getElementById('tel2').addEventListener('input', phoneMask);
-
-        // Smooth scroll for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
-
-        // Add animation on scroll for cards
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.price-card-modern').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-            observer.observe(card);
-        });
-
-        // Random floating animation for icons
-        setInterval(() => {
-            document.querySelectorAll('.fa-bolt, .fa-shield-alt, .fa-check-circle').forEach(icon => {
-                icon.style.transform = `translate(${Math.random() * 5 - 2.5}px, ${Math.random() * 5 - 2.5}px)`;
-            });
-        }, 2000);
     </script>
 </body>
 </html>
